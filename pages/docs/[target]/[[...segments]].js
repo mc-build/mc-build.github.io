@@ -63,12 +63,12 @@ export async function getStaticProps(data) {
   const _p = path.join(
     "docs",
     data.params.target,
-    (data.params.segments || []).join(path.sep)
+    ...(data.params.segments || [])
   );
   return {
     props: {
       md: fs.readFileSync("./" + _p + ".md", "utf-8"),
-      display: [data.params.target, ...data.params.segments],
+      display: [data.params.target, ...(data.params.segments || [])],
     },
   };
 }
