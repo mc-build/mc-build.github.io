@@ -57,7 +57,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(data) {
   const path = await import("path");
-  const _p = path.join("docs", data.params.target, ...data.params.segments);
+  const _p = path.join(
+    "docs",
+    data.params.target,
+    ...(data.params.segments || [])
+  );
   return {
     props: {
       md: fs.readFileSync("./" + _p + ".md", "utf-8"),
