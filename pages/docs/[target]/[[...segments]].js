@@ -1,5 +1,4 @@
 import React from "react";
-import * as path from "path";
 import getAllFiles from "get-all-files";
 import fs from "fs";
 import MarkDown from "react-markdown";
@@ -26,6 +25,7 @@ export default function Docs({ md, display }) {
   );
 }
 export async function getStaticPaths() {
+  const path = await import("path");
   const docFiles = [];
   //mcbuild.dev/docs/test.md
   //mcbuild.dev/pages/docs/[target]/[[...path]].js
@@ -54,7 +54,9 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
 export async function getStaticProps(data) {
+  const path = await import("path");
   const _p = path.join("docs", data.params.target, ...data.params.segments);
   return {
     props: {
