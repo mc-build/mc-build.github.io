@@ -57,6 +57,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(data) {
   const path = await import("path");
+  console.log(data);
   const _p = path.join(
     "docs",
     data.params.target,
