@@ -63,7 +63,7 @@ export async function getStaticProps(data) {
   const _p = path.join(
     "docs",
     data.params.target,
-    ...(data.params.segments || [])
+    (data.params.segments || []).join(path.sep)
   );
   return {
     props: {
