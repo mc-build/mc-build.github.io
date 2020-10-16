@@ -40,7 +40,7 @@ export async function getStaticPaths() {
     }
   }
   const base = path.resolve("./docs");
-  return {
+  const res = {
     paths: docFiles.map((filename) => {
       const relative = path.relative(base, filename);
       const [target, ...parts] = relative.replace(".md", "").split(path.sep);
@@ -53,11 +53,13 @@ export async function getStaticPaths() {
     }),
     fallback: false,
   };
+  console.log("getStaticPaths", res);
+  return res;
 }
 
 export async function getStaticProps(data) {
   const path = await import("path");
-  console.log(data);
+  console.log("getStaticProps", data);
   const _p = path.join(
     "docs",
     data.params.target,
