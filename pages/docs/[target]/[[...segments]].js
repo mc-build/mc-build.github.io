@@ -53,13 +53,13 @@ export async function getStaticPaths() {
     }),
     fallback: false,
   };
-  console.log("getStaticPaths", res);
+  console.log("getStaticPaths", JSON.stringify(res));
   return res;
 }
 
 export async function getStaticProps(data) {
   const path = await import("path");
-  console.log("getStaticProps", data);
+  console.log("getStaticProps", JSON.stringify(data));
   const _p = path.join(
     "docs",
     data.params.target,
