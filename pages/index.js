@@ -17,14 +17,15 @@ const App = () => (
         <Columns>
             <Columns.Column>
                 <Card style={{ margin: '2em' }}>
-                    <Card.Image />
                     <Card.Content>
                         <Content>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-          <a href="#1">#css</a> <a href="#2">#responsive</a>
-                            <br />
-                            <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            <h3></h3>
+                            <hr />
+                            <p>
+                                {/* vanilla command like syntax, easy to learn and implement, have custom macros, has libraries, helpful discord server, js block support, has other common programming feature like if, else, elseif, loop, while statements
+                                Inline functions also */}
+                                MC-BUILD impliment a vanilla command like syntax through the lang-mc language.
+                            </p>
                         </Content>
                     </Card.Content>
                 </Card>
