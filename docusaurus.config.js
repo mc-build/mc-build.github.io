@@ -13,7 +13,7 @@ module.exports = {
       title: 'MC-BUILD',
       logo: {
         alt: 'MC-BUILD Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.webp',
       },
       items: [
         {
