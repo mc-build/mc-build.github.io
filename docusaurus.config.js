@@ -1,7 +1,7 @@
 module.exports = {
   title: 'MC-BUILD',
   tagline: 'A datapack build tool',
-  url: 'https://docs.mcbuild.dev',
+  url: 'https://mcbuild.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
