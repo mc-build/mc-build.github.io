@@ -25,7 +25,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i yarn -g
+    - name: Init node
     - run: yarn
+    - name: Init git
+    - run: git submodule init
+    - run: git submodule update
+    - name: Build
     - run: yarn build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
