@@ -1,0 +1,3 @@
+[submodule "docs/lang-mc.wiki"]
+	path = docs/lang-mc
+	url = https://github.com/mc-build/lang-mc.wiki.git
