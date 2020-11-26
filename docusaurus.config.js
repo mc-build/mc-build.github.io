@@ -33,25 +33,16 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Community',
-          items: [
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            }
-          ],
-        },
-        {
           title: 'More',
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/mc-build',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `mc-build is not affiliated with minecraft or mojang in any way. <br/> <span style="color:gray">Copyright © ${new Date().getFullYear()} Ian Senne</span>`,
     },
   },
   presets: [
