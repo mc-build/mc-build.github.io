@@ -71,7 +71,7 @@ function Home() {
                   'button button--outline button--secondary button--lg',
                   styles.getStarted,
                 )}
-                href={"/discord"}>
+                href={"//discord.mcbuild.dev"}>
                 Join the Discord
               </a>
             </div>
