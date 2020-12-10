@@ -39,6 +39,10 @@ module.exports = {
               label: 'GitHub',
               href: 'https://github.com/mc-build',
             },
+            {
+              label: 'Rules & Code of Conduct',
+              href: 'https://mcbuild.dev/code-of-conduct/',
+            },
           ],
         },
       ],
