@@ -187,7 +187,7 @@ Inline JS blocks cannot span multiple lines.
 Multiline JS blocks are JS code wrapped in `<%%` and `%%>`.
 ```
 <%%
-    for (let i=0; i<10, i++) {
+    for (let i=0; i<10; i++) {
         emit(`say ${i}`)
     }
 %%>
