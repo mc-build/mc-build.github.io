@@ -21,7 +21,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        mc-build allows you to make a complex datapack in just a couple of files.
+        mc-build allows you to make a complex Data Pack in just a couple of files.
         no more jumping around many mcfunction files to follow your logic
       </>
     ),
