@@ -243,3 +243,37 @@ Execute if else blocks can be defined and used within [Function context](https:/
 
 
 # macros
+You can only define macros in .mcm files.
+```
+# mess.mcm
+macro mess {
+  say $$0
+  scoreboard players set $$1 $$2 10
+}
+```
+Macros must be imported in order to be referenced.
+```
+# foo.mc
+import ./mess.mcm
+
+function bar {
+  macro mess Hello! @s objective
+  say Hello again!
+  # The macro keyword is optional in .mc files!
+  mess Uhoh .loop v
+}
+```
+The code above produces this:
+```
+# function foo:bar
+say Hello!
+scoreboard players set @s objective 10
+say Hello again!
+say Uhoh
+scoreboard players set .loop v 10
+```
+JS inside of macros has a few extra globals:
+#### emit `emit(text: string): void`
+Emits text directly to the output function.
+#### args `args: Array<{type: string, content: string}>`
+A list of arguments passed to the macro
