@@ -272,6 +272,18 @@ say Hello again!
 say Uhoh
 scoreboard players set .loop v 10
 ```
+You can append to the load and tick in a macro. It will only append once if the macro is used.
+```
+macro mess2 {
+  tick {
+    say spam!
+  }
+  load {
+    say Reloaded!
+  }
+}
+```
+
 JS inside of macros has a few extra globals:
 #### emit `emit(text: string): void`
 Emits text directly to the output function.
