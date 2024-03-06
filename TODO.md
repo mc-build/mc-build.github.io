@@ -1,0 +1,3 @@
+- [ ] Create a migration Guide
+- [ ] Document how to access the js config
+- [ ] Explain `store` and `global`

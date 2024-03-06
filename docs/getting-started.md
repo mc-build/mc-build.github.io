@@ -58,4 +58,4 @@ That's it! Your project is now ready for development.
 
 ## What's Next?
 
-Check out the [Language Features](/docs) documentation for more information on how to write MC-Build code. 
+Check out the [Language Features](/language-features/) documentation for more information on how to write MC-Build code. 

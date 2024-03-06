@@ -1,0 +1,94 @@
+body {
+	/* Default color shades */
+	--md-default-fg-color: #d4edf5 !important;
+	--md-default-fg-color--light: #fdfeff !important;
+	/* --md-default-fg-color--lighter: #ff0000 !important; */
+	/* --md-default-fg-color--lightest: #ff0000 !important; */
+	--md-default-bg-color: #252c33 !important;
+	/* --md-default-bg-color--light: #ff0000 !important; */
+	/* --md-default-bg-color--lighter: #ff0000 !important; */
+	/* --md-default-bg-color--lightest: #ff0000 !important; */
+
+	/* Primary color shades */
+	--md-primary-fg-color: #1c915a !important;
+	--md-primary-scrollbar-thumb-color: #166e45 !important;
+	--md-primary-scrollbar-track-color: #414850 !important;
+	/* --md-primary-fg-color--light: #ff0000 !important; */
+	/* --md-primary-fg-color--dark: #ff0000 !important; */
+	/* --md-primary-bg-color: #ff0000 !important; */
+	/* --md-primary-bg-color--light: #ff0000 !important; */
+
+	/* Accent color shades */
+	--md-accent-fg-color: #68f1b1 !important;
+	/* --md-accent-fg-color--transparent: #ff0000 !important; */
+	/* --md-accent-bg-color: #ff0000 !important; */
+	/* --md-accent-bg-color--light: #ff0000 !important; */
+
+	/* Code block color shades */
+	--md-inlinecode-fg-color: #d4dd4d !important;
+	--md-code-bg-color: #21262b !important;
+	--md-code-fg-color: var(--md-default-fg-color) !important;
+
+	/* Example Admonition */
+	--example-bg-color: #5b5dec;
+
+	/* Tabs */
+	--md-tabs-bg-color: #1c1f24 !important;
+}
+
+h2 {
+	color: var(--md-default-fg-color--light) !important;
+}
+
+code {
+	color: var(--md-inlinecode-fg-color) !important;
+	padding: 0.25em 0.5em !important;
+}
+
+.highlight pre code {
+	color: var(--md-code-fg-color) !important;
+	border: 1px solid var(--md-primary-fg-color--dark) !important;
+	padding: 0.75em !important;
+}
+
+details.example {
+	border-color: var(--example-bg-color) !important;
+}
+
+.example > summary::before {
+	background-color: var(--example-bg-color) !important;
+}
+
+.example > summary::after {
+	color: var(--example-bg-color) !important;
+}
+
+.example > summary {
+	/* color: #ff0000 !important; */
+	background-color: var(--md-code-bg-color) !important;
+}
+
+span.filename {
+	font-size: 12px !important;
+	padding: 0.25em 0.5em !important;
+	font-weight: normal !important;
+	color: var(--md-default-fg-color--light);
+}
+
+.md-tabs {
+	background-color: var(--md-tabs-bg-color) !important;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--md-primary-scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--md-primary-scrollbar-thumb-color);
+	border-radius: 10px;
+}

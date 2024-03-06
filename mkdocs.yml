@@ -1,10 +1,52 @@
 site_name: MC-Build Documentation
-theme: readthedocs
+
+theme:
+  name: material
+  palette:
+    primary: green
+    accent: light-green
+  font:
+    text: 'Work Sans'
+    code: 'Cascade Code'
+  logo: 'img/logo.png'
+  favicon: 'img/favicon.ico'
+  icon:
+    admonition:
+      example: 'fontawesome/solid/code'
+      info: 'fontawesome/solid/book'
+  features:
+    - navigation.tabs
 
 nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
-  - Language Features: language-features.md
+  - Home:
+      - index.md
+      - Getting Started: getting-started.md
+  - Lanugage Features:
+      - Index: language-features/index.md
+      - Blocks: language-features/blocks.md
+      - Clocks: language-features/clocks.md
+      - Compile IF / ELSE: language-features/compile-if-else.md
+      - Compile REPEAT: language-features/compile-repeat.md
+      - Directories: language-features/directories.md
+      - Execute run: language-features/execute-run.md
+      - Execute if / else: language-features/execute-run#execute-if-else
+      - Function Calls: language-features/function-calls.md
+      - Function Definitions: language-features/function-definitions.md
+      - Imports: language-features/imports.md
+      - JavaScript Blocks, and Contexts: language-features/javascript-blocks-and-contexts.md
+      - Tags, and other JSON Files: language-features/tags-and-json-files.md
+      - Templates: language-features/templates.md
+      - Tick and Load Blocks: language-features/tick-and-load-blocks.md
 
 extra_css:
-  - style.css
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: 'fontawesome/brands/github-alt'
+      link: 'https://github.com/mc-build/mcb'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
