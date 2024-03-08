@@ -78,6 +78,51 @@ Variables, and functions that are available for use in multi-line script blocks.
 
 	Requires a file relative to the current file. Same as the `require` function in Node.js.
 
+??? info "Examples"
+	!!! example "Using a Multi-line Script"
+
+		```{title="Code"}
+		function say_hello {
+			<%%
+				emit("say Hello World")
+				for (let i = 0; i < 3; i++) {
+					emit(`say ${i}`)
+				}
+			%%>
+		}
+		```
+
+		```{title="say_hello.mcfunction"}
+		say Hello World
+		say 0
+		say 1
+		say 2
+		```
+
+	!!! example "Generating Functions with Multi-line Scripts"
+
+		```{title="Code"}
+		<%%
+			for (let i = 0; i < 3; i++) {
+				emit.mcb(`function say_${i} {
+					say ${i}
+				}`)
+			}
+		%%>
+		```
+
+		```{title="say_0.mcfunction"}
+		say 0
+		```
+
+		```{title="say_1.mcfunction"}
+		say 1
+		```
+
+		```{title="say_2.mcfunction"}
+		say 2
+		```
+
 
 ## Value Injection
 
@@ -90,3 +135,11 @@ Global variables, and functions that are available for use in multi-line script 
 - `REPEAT`
 
 	the method that produces an iterator used for evaluating `REPEAT` expressions.
+
+- `store`
+
+	An object that can be used to store values that persist between script blocks.
+
+- `global`
+
+	An object that can be used to store values that persist between script blocks.

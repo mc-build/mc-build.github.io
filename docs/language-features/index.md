@@ -12,6 +12,7 @@
 - [Function Definitions](function-definitions)
 - [Imports](imports)
 - [JavaScript Blocks, and Contexts](javascript-blocks-and-contexts)
-- [Tags, and other JSON Files](json-files)
+- [JSON Files](json-files)
+- [Tags](tags)
 - [Templates](templates)
 - [Tick and Load Blocks](tick-and-load-blocks)
