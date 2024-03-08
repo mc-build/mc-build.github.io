@@ -15,6 +15,8 @@ Variables, and functions that are available for use in inline script blocks.
 
 	The current [Compiler Context]().
 
+- [Global Scope](#global-scope)
+
 
 ??? info "Examples"
 	!!! example "Using an Inline Script"
@@ -78,6 +80,9 @@ Variables, and functions that are available for use in multi-line script blocks.
 
 	Requires a file relative to the current file. Same as the `require` function in Node.js.
 
+- [Global Scope](#global-scope)
+
+
 ??? info "Examples"
 	!!! example "Using a Multi-line Script"
 
@@ -130,7 +135,7 @@ Variables, and functions that are available for use in multi-line script blocks.
 
 ## Global Scope
 
-Global variables, and functions that are available for use in multi-line script blocks.
+Variables, and functions that are available for use in all script blocks.
 
 - `REPEAT`
 
