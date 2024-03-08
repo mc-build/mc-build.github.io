@@ -61,6 +61,10 @@ When importing a `.mcbt` file, all the templates from that file will be loaded i
 
 
 ## Importing Libraries
+
+!!! warning
+	Libraries are Work-in-Progress. This section is subject to change.
+
 ```
 import <library_name>
 ```

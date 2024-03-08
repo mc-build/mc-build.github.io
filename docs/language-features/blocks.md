@@ -36,7 +36,7 @@ Creating an unnamed block will put the generated function into the parent functi
 A named block will put it's generated function into the parent function's folder as `<name>.mcfunction`.
 
 ??? info "Creating an Named Block"
-    ```{title="Code"}
+    ```title="Code"
     function example {
         block my_block {
             say Hello, world!

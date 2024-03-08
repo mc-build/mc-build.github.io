@@ -21,6 +21,8 @@ nav:
   - Home:
       - index.md
       - Getting Started: getting-started.md
+      - Language Features: language-features/index.md
+      - Migrating from MCB 1.0: migrating-from-mcb-1.0.md
   - Lanugage Features:
       - Index: language-features/index.md
       - Blocks: language-features/blocks.md

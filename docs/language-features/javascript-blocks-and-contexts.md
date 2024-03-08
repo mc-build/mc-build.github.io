@@ -15,7 +15,17 @@ Variables, and functions that are available for use in inline script blocks.
 
 	The current [Compiler Context]().
 
+- `embed(block: BoundBlock)`
+
+	Takes a `BoundBlock` instance and embeds a reference to it.
+
 - [Global Scope](#global-scope)
+
+### Argument Scope
+
+Argument scope is the special scope that is used when an Inline Scripts is used as an argument for MC-Build Compile-time features, such as `REPEAT`, or `IF` expressions.
+
+It has access to everything the normal inline script scope has, except for the `embed` function.
 
 
 ??? info "Examples"
@@ -128,11 +138,6 @@ Variables, and functions that are available for use in multi-line script blocks.
 		say 2
 		```
 
-
-## Value Injection
-
-`embed` takes a `BoundBlock` instance provided by a template `block` argument and embeds a reference to it. returns a string of commands produced by evaluating the block.
-
 ## Global Scope
 
 Variables, and functions that are available for use in all script blocks.
@@ -143,8 +148,12 @@ Variables, and functions that are available for use in all script blocks.
 
 - `store`
 
-	An object that can be used to store values that persist between script blocks.
+	An object that can be used to store misc values that persist between script blocks, but not between builds.
 
 - `global`
 
-	An object that can be used to store values that persist between script blocks.
+	An object that can be used to store misc values that persist between script blocks, and persist between builds.
+
+- `config`
+
+	An object that contains the user-defined values from the `config.json` file.
