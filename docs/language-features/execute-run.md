@@ -1,4 +1,4 @@
-Any `execute ... run` command can be followed by a [Block](blocks) to create a new function that gets called by execute command.
+Any `execute ... run` command can be followed by a [Block](blocks.md) to create a new function that gets called by execute command.
 
 ```
 execute ... run {

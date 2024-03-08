@@ -1,4 +1,4 @@
-Function definitions are used to create new functions. They can be used inside of [Directories](directories), or in the root of the `.mcb` file.
+Function definitions are used to create new functions. They can be used inside of [Directories](directories.md), or in the root of the `.mcb` file.
 
 Applying the `tick` or `load` keyword to a function definition will add it to the `minecraft:tick` function tag or the `minecraft:load` function tag, respectively.
 
