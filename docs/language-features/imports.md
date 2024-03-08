@@ -1,9 +1,78 @@
-Within the mcb language an import statement can be used to include aditional files into your program, mcb supports 3 kinds of imports.
+MC-Build supports importing of JavaScript, Templates, and libraries.
 
-1. JavaScript, Importing a JavaScript file will take the context exported via commonjs and will inject it into the JavaScript enviroment in the current file.
+## Importing JavaScript Files
+```
+import <path_to_file>.js
+```
 
-2. mcbt files, Importing a `.mcbt` will load all the macros from that file into the current file and make them usable.
+When importing a JavaScript file, the context exported via `module.exports` will be injected into the JavaScript environment in the current file.
 
-3. libraries, Importing a library by name will load the code included in the library and add a set of macros to the current file.
+??? info "Examples"
+	!!! example "Importing a JavaScript File"
+		```{title="my_js_file.js"}
+		module.exports = {
+			helloWorldString: "Hello, world!"
+			myIterator: function* () {
+				yield 1;
+				yield 2;
+				yield 3;
+			}
+		}
+		```
 
-`import <location>`
+		```{title="example.mcb"}
+		import ./my_js_file.js
+
+		function example {
+			say <% helloWorldString %>
+		}
+
+		REPEAT myIterator as i {
+			function <% i %> {
+				say I'm function <% i %>!
+			}
+		}
+		```
+
+## Importing Template Files
+```
+import <path_to_file>.mcbt
+```
+
+When importing a `.mcbt` file, all the templates from that file will be loaded into the current file and made usable.
+
+??? info "Examples"
+	!!! example "Importing a Template File"
+		```{title="my_template.mcbt"}
+		template hello {
+			with arg1:word {
+				say Hello, <% arg1 %>!
+			}
+		}
+		```
+
+		```{title="example.mcb"}
+		import ./my_template.mcbt
+
+		function hello {
+			hello world
+		}
+		```
+
+
+## Importing Libraries
+```
+import <library_name>
+```
+
+When importing a library by name, the code included in the library will be loaded and any templates from it will be added to the current file.
+
+??? info "Examples"
+	!!! example "Importing a Library"
+		```{title="example.mcb"}
+		import hello_world_lib
+
+		function hello {
+			hello world
+		}
+		```

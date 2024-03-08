@@ -1,111 +1,163 @@
-Templates are a means of defining a sort of compile time function which the result is inlined into your code.
+Templates are essentially compile-time macros. They allow you to define a command, that when called, will be replaced with the code defined in the Template. This is useful for defining complex sequences of commands that are used multiple times in a script, or for modfiying the behavior of vanilla commands.
 
-# Definition
+!!! note
+    Templates can only be defined inside of `.mcbt` files.
 
-A template definition contains atleast one signature definition as well as an optional `tick` and `load` block.
+## Creating a Template
 
-A template signature consists of the with keyword followed by zero or more arguments
-`with [...params]`
-An argument is either a literal if it is just a name or a name with a type `<name>:<type>`
-
-ex.
-`with a number:int`
-This would match a literal `a` followed by any integer value
-
-When parsing a value the signatures are checked in the order of definition.
-Its best to have your least specific signatures last and most specific first.
-
-# Types
-
-- `raw` - This will just grab the rest of the current argument string and pass it through as is.
-- `float` - This will match any number
-- `int` - This will match any integer
-- `js` - This expects an inline JavaScript block and will pass the computed value as is without stringifying it
-- `word` - This will pass the everything up until the end of the input or the next space
-
-# Caveats
-
-if your passing a inline JavaScript block to anything other than a `js` argument it will be interpreted and the string result should match exactly one argument.
-
-# Examples
-
-`example.mcbt`
+To create a template, you use the `template` keyword followed by the name of the template. Inside the template block, you define the code that will be executed when the template is called.
 
 ```
-template with-args{
-    with a:int b:int c:int {
-        say a=<%a%>
-        say b=<%b%>
-        say c=<%c%>
-    }
-    with a:int b:raw {
-        say a=<%a%> (<%typeof a%>)
-        say b=<%b%> (<%typeof b%>)
+template <template_name> {
+    <template_definition>
+}
+```
+
+### Defining Call Signatures
+
+Defining a template call signature is done using the `with` keyword followed by a list of arguments, then a code block.
+
+```
+template my_super_template {
+    with [args] {
+        <mcb_code>
     }
 }
+```
 
-template without-args {
-    load{
-        say load
-    }
-    tick{
-        say tick
-    }
-    with {
-        say this has no arguments
-    }
-}
+Call signatures are checked in the order of definition, so it's best to order them from most specific to least specific.
 
-template arg-js {
-    with a:js {
-        LOOP(a) as item{
-            say item=<%item%> (<%typeof item%>)
+??? info "Example"
+    !!! example "Ordering Signatures for Specificity"
+        ```{title="Definition"}
+        template my_template {
+            with check this first {
+                say Very specific
+            }
+            with a:word b:word c:word {
+                say Less specific
+            }
+            with a:raw {
+                say Least specific
+            }
         }
-    }
-}
+        ```
 
-template arg-block {
-    with a:block {
-        <%embed(a)%>
-    }
-}
+### Arguments
 
-template arg-literal{
-    with test {
-        say test
+Each argument is defined as a name followed by a type. The type is optional, and if not provided, the argument will be treated as a literal.
+
+Arguments can be referenced inside of Script blocks by name.
+
+#### Argument Types
+- `int` - This will match any integer.
+- `float` - This will match any number.
+- `js` - This expects an inline JavaScript block and will pass the computed value.
+- `word` - Matches anything up until the end of the input or the next space.
+- `raw` - Collects all remaining input as a string.
+- `literal` - Special, matches the argument name exactly, and is the default if no type is provided.
+
+??? info "Examples"
+    !!! example "Simple Template"
+        ```{title="Definition"}
+        template my_template {
+            with string:raw {
+                say <%string%>
+            }
+        }
+        ```
+
+        ```{title="Usage"}
+        my_template Hello, World!
+        ```
+
+        ```{title="Output"}
+        say Hello, World!
+        ```
+
+!!! warning
+    If you pass a Script Block to anything other than a `js` argument, it will be interpreted *before* being passed to the template.
+    ??? info "Examples"
+        !!! example "Passing a Script Block to a non-js Argument"
+            ```{title="Definition"}
+            template my_template {
+                with a:number {
+                    say <%a%>
+                }
+            }
+            ```
+
+            ```{title="Usage"}
+            my_template <%1+1%>
+            ```
+
+            Because `a` is not a `js` argument, the JS block will be evaluated before being passed to the template. So the argument recieves the value `2` instead of the block `<%1+1%>`.
+
+            ```{title="Output"}
+            say 2
+            ```
+
+
+## Calling a Template
+
+To call a template, you first need to import it. This is done using the `import` keyword followed by the path to the `.mcbt` file containing the template.
+
+```
+import <template_path>.mcbt
+```
+
+Once imported, you can call the template either via `template <template_name>` or `<template_name>` followed by the arguments.
+
+```
+[template] <template_name> [args]
+```
+
+!!! warning
+    If your template name is the same as an MC-Build keyword, you must use the `template` keyword to call it.
+
+
+## Tick and Load
+
+Templates can define `tick` and `load` blocks, which are functions that will be appended to the `minecraft:tick` and `minecraft:load` function tags respectively.
+
+```
+template <template_name> {
+    load {
+        <mcb_code>
     }
-    with bar {
-        say bar
+    tick {
+        <mcb_code>
+    }
+    with [args] {
+        <mcb_code>
     }
 }
 ```
 
-`main.mcb`
+!!! note
+    Templates can only define one `load` and one `tick` block each
 
-```
-import ./example.mcbt
+!!! warning
+    The `tick` and `load` blocks are not appended to the `minecraft:tick` and `minecraft:load` functions unless the template is called at least once.
 
-function with-args{
-    with-args <%1%> 2
-    #---------
-    with-args 1 2 3
-}
-function without-args{
-    without-args
-}
 
-function js-args{
-    arg-js <%[1,2n,'3',true]%>
-}
-
-function block-args{
-    arg-block {
-        say hi
-    }
-}
-
-function literal-args{
-    arg-literal test
-    arg-literal bar
-}
-```
+??? info "Examples"
+    !!! example "A simple Clock Template"
+        ```{title="Definition"}
+        template clock {
+            load {
+                scoreboard objectives add i dummy
+                scoreboard players add #clock.ticks i 0
+            }
+            tick {
+                scoreboard players add #clock.ticks i 1
+            }
+            with get ticks player:word objective:word {
+                scoreboard players operation <%player%> <%objective%> = #clock.ticks i
+            }
+            with get seconds player:word objective:word {
+                scoreboard players operation #clock.seconds i = #clock.ticks i / 20
+                scoreboard players operation <%player%> <%objective%> = #clock.ticks i
+            }
+        }
+        ```

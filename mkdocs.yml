@@ -34,7 +34,8 @@ nav:
       - Function Definitions: language-features/function-definitions.md
       - Imports: language-features/imports.md
       - JavaScript Blocks, and Contexts: language-features/javascript-blocks-and-contexts.md
-      - Tags, and other JSON Files: language-features/tags-and-json-files.md
+      - JSON Files: language-features/json-files.md
+      - Tags: language-features/tags.md
       - Templates: language-features/templates.md
       - Tick and Load Blocks: language-features/tick-and-load-blocks.md
 

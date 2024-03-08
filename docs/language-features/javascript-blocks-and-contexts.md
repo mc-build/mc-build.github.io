@@ -1,57 +1,92 @@
-# JavaScript Blocks
+# JavaScript Script Blocks
 
-JavaScript blocks in mc-build allow you to run javascript and effect the output based on the code run.
+Script Blocks provide and easy, and inline way to use JavaScript to generate, or insert values into, your commands.
 
-## inline scripts
+## Inline Scripts
+Used to evaluate some JavaScript and inline the result into a command.
 
-inline scripts are snippets, variable references, etc.
+`<%...%>`
 
-`<% code %>`
+### Scope
 
-## multi line blocks
+Variables, and functions that are available for use in inline script blocks.
+
+- `context`
+
+	The current [Compiler Context]().
+
+
+??? info "Examples"
+	!!! example "Using an Inline Script"
+		```{title="Code"}
+		say <% 1 + 1 %> <%10*10%>
+
+		REPEAT (1, 10) as i {
+			say <% i %>
+		}
+		```
+
+		```{title="Output"}
+		say 2 100
+		say 1
+		say 2
+		say 3
+		say 4
+		say 5
+		say 6
+		say 7
+		say 8
+		say 9
+		say 10
+		```
+
+## Multi-line Scripts
+
+Used to evaluate more complex JavaScript. Instead of injecting the return result of the script into a command, Multi-line Scripts include a few functions that can be used to generate commands, and more.
 
 ```
 <%%
-//Javascript Code
+	...
 %%>
 ```
 
-# Contexts
+### Scope
 
-the different script blocks expose different methods to the user.
+Variables, and functions that are available for use in multi-line script blocks.
 
-## Multi Line Script blocks
+- `emit(str: String)`
 
-the return result here is ignored.
+	Emits a string into the output.
 
-`emit`
+- `emit.mcb(str: String)`
 
-the emit function takes a string and injects it into the output.
+	Emits a string into the output after running it through the MC-Build compiler.
 
-`emit.mcb`
+- `emit.block(commands: Array[String])`
 
-this does the same but runs it through the mc-build compiler before emiting it.
+	Takes a list of commands, generates a function, and emits a call to that function.
 
-`emit.block` takes a list of commands and emits it as a function embeding a function call.
+- `context`
 
-returns the function signature of the created function.
+	The current [Compiler Context]().
 
-`context` the compiler context currently in use.
+- `embed(block: BoundBlock)`
 
-`embed` takes a `BoundBlock` instance provided by a template `block` argument and embeds a reference to it. returns a string of commands produced by evaluating the block.
+	Takes a `BoundBlock` instance and embeds a reference to it.
 
-`require` require provided by nodejs relative to the current file.
+- `require(path: String)`
 
-## Inline Expressions
+	Requires a file relative to the current file. Same as the `require` function in Node.js.
 
-this is used internally in some cases, ex. when evaluating loops.
-
-`context` the compiler context currently in use.
 
 ## Value Injection
 
 `embed` takes a `BoundBlock` instance provided by a template `block` argument and embeds a reference to it. returns a string of commands produced by evaluating the block.
 
-## Globals
+## Global Scope
 
-`LOOP` - the method that produces an iterator used for evaluating compile time loops.
+Global variables, and functions that are available for use in multi-line script blocks.
+
+- `REPEAT`
+
+	the method that produces an iterator used for evaluating `REPEAT` expressions.
