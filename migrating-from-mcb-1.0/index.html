@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../language-features/">
+      
+      
+        <link rel="next" href="../language-features/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Installing mc-build - MC-Build Documentation</title>
+        <title>Migrating from MCB 1.0 - MC-Build Documentation</title>
       
     
     
@@ -78,11 +82,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#installing-mc-build" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -116,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing mc-build
+              Migrating from MCB 1.0
             
           </span>
         </div>
@@ -146,10 +145,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href=".." class="md-tabs__link">
           
   
@@ -215,23 +216,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -242,7 +248,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Home
@@ -286,6 +292,56 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Language Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Migrating from MCB 1.0
+  </span>
+  
+
+      </a>
+      
     </li>
   
 
@@ -696,8 +752,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -712,23 +766,7 @@
                   
 
 
-<h1 id="installing-mc-build">Installing mc-build</h1>
-<p><a href="https://streamable.com/bcljw4">Video Tutorial on installing mc-build (Credit - AncientKingg)</a></p>
-<p>To install mc-build on your device you must first install Node.js. Simply visit their site (<a href="https://nodejs.org/en/">nodejs.org</a>) and download and run the installer.</p>
-<p>Once node is finished installing open a command prompt and run this command: <code>npm i -g mc-build</code></p>
-<p>Tada! mc-build is now installed.</p>
-<h1 id="creating-a-development-environment">Creating a development environment</h1>
-<p>To create a mc-build datapack, simply navigate to your chosen <code>world/datapacks</code> folder, and create a new datapack folder.</p>
-<p>Then inside the datapack folder, create a <code>src</code> folder, and a pack.mcmeta file. (The pack.mcmeta is identical to a vanilla pack.mcmeta)</p>
-<p>Then open a command prompt and navigate to your new datapack folder.</p>
-<p>Once inside your datapack folder, run the command <code>mcb</code>.</p>
-<p>That's it! Your datapack is now ready for development.</p>
-<h1 id="creating-a-config-file">Creating a config file</h1>
-<p>Open a command prompt and navigate to your datapack folder. Then:</p>
-<ul>
-<li>To create a JSON config: <code>mcb -config json</code></li>
-<li>To create a JavaScript config: <code>mcb -config js</code></li>
-</ul>
+  <h1>Migrating from MCB 1.0</h1>
 
 
 
@@ -736,8 +774,7 @@
 
 
 
-  
-  
+
 
 
 

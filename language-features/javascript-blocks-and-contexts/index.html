@@ -297,6 +297,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Language Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrating-from-mcb-1.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migrating from MCB 1.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -649,6 +691,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#argument-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Argument Scope
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -675,15 +726,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#value-injection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value Injection
-    </span>
-  </a>
   
 </li>
       
@@ -841,6 +883,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#argument-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Argument Scope
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -867,15 +918,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#value-injection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Value Injection
-    </span>
-  </a>
   
 </li>
       
@@ -916,9 +958,16 @@
 <p>The current <a href="">Compiler Context</a>.</p>
 </li>
 <li>
+<p><code>embed(block: BoundBlock)</code></p>
+<p>Takes a <code>BoundBlock</code> instance and embeds a reference to it.</p>
+</li>
+<li>
 <p><a href="#global-scope">Global Scope</a></p>
 </li>
 </ul>
+<h3 id="argument-scope">Argument Scope</h3>
+<p>Argument scope is the special scope that is used when an Inline Scripts is used as an argument for MC-Build Compile-time features, such as <code>REPEAT</code>, or <code>IF</code> expressions.</p>
+<p>It has access to everything the normal inline script scope has, except for the <code>embed</code> function.</p>
 <details class="info">
 <summary>Examples</summary>
 <div class="admonition example">
@@ -1017,8 +1066,6 @@ say 2
 </code></pre></div>
 </div>
 </details>
-<h2 id="value-injection">Value Injection</h2>
-<p><code>embed</code> takes a <code>BoundBlock</code> instance provided by a template <code>block</code> argument and embeds a reference to it. returns a string of commands produced by evaluating the block.</p>
 <h2 id="global-scope">Global Scope</h2>
 <p>Variables, and functions that are available for use in all script blocks.</p>
 <ul>
@@ -1028,11 +1075,15 @@ say 2
 </li>
 <li>
 <p><code>store</code></p>
-<p>An object that can be used to store values that persist between script blocks.</p>
+<p>An object that can be used to store misc values that persist between script blocks, but not between builds.</p>
 </li>
 <li>
 <p><code>global</code></p>
-<p>An object that can be used to store values that persist between script blocks.</p>
+<p>An object that can be used to store misc values that persist between script blocks, and persist between builds.</p>
+</li>
+<li>
+<p><code>config</code></p>
+<p>An object that contains the user-defined values from the <code>config.json</code> file.</p>
 </li>
 </ul>
 
