@@ -1,1 +1,2 @@
 - [ ] Create a migration Guide
+- [ ] Document [Compiler Context](https://github.com/mc-build/mcb/blob/main/src/mcl/Compiler.hx#L285-L304)

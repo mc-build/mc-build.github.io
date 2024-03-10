@@ -45,15 +45,9 @@ extra_css:
   - stylesheets/extra.css
 
 extra:
-  version:
-    provider: mike
-
   social:
     - icon: 'fontawesome/brands/github-alt'
       link: 'https://github.com/mc-build/mcb'
-
-plugins:
-  - mike:
 
 markdown_extensions:
   - admonition
