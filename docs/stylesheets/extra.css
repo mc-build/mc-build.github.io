@@ -26,7 +26,7 @@ body {
 
 	/* Code block color shades */
 	--md-inlinecode-fg-color: #d4dd4d !important;
-	--md-code-bg-color: #21262b !important;
+	--md-code-bg-color: #1a1e22 !important;
 	--md-code-fg-color: var(--md-default-fg-color) !important;
 
 	/* Example Admonition */
@@ -34,6 +34,54 @@ body {
 
 	/* Tabs */
 	--md-tabs-bg-color: #1c1f24 !important;
+
+	/* Tables */
+	--md-typeset-table-color: var(--md-primary-fg-color) !important;
+	--md-typeset-table-bg-color: #343c44 !important;
+
+	--md-code-hl-number-color: #ffc36a !important;
+	--md-code-hl-special-color: #f55288 !important;
+	--md-code-hl-function-color: #b751c9 !important;
+	--md-code-hl-constant-color: #a190f5 !important;
+	--md-code-hl-keyword-color: #97c9c0 !important;
+	--md-code-hl-string-color: #74f174 !important;
+}
+
+table {
+	border: 1px solid var(--md-typeset-table-color) !important;
+	border-radius: 4px !important;
+}
+
+thead tr th {
+	text-align: center !important;
+	vertical-align: middle !important;
+	font-size: 16px !important;
+	font-weight: normal !important;
+	text-wrap: nowrap !important;
+	padding: 0.5em 0.75em !important;
+}
+
+thead tr th:not(:last-child) {
+	border-right: 1px solid var(--md-typeset-table-color) !important;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: var(--md-typeset-table-bg-color) !important;
+}
+
+tbody tr td {
+	border-top: 1px solid var(--md-typeset-table-color) !important;
+	padding: 0.25rem 0.5rem !important;
+	vertical-align: middle !important;
+}
+
+tbody tr td:not(:last-child):not(:nth-child(3)) {
+	text-align: center !important;
+	text-wrap: nowrap !important;
+}
+
+tbody tr td:not(:last-child) {
+	border-right: 1px solid var(--md-typeset-table-color) !important;
 }
 
 h2 {
@@ -48,6 +96,7 @@ code {
 .highlight pre code {
 	color: var(--md-code-fg-color) !important;
 	border: 1px solid var(--md-primary-fg-color--dark) !important;
+	border-radius: 4px !important;
 	padding: 0.75em !important;
 }
 
