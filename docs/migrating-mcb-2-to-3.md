@@ -65,8 +65,8 @@ Then, you will need to update the fields in your `config.js` or `config.json` fi
 	| `mc.header` | `header` | `"# Generated with MC-Build\n"` | The header to be added to the top of all generated files. |
 	| `mc.internalScoreboard` | `internalScoreboardName` | `"mcb.internal"` | The name of the internal scoreboard used by MC-Build. |
 	| `mc.rootNamespace` | `N/A` | | The `mc.rootNamespace` option has been removed. |
-	| `mc-math.tempScoreboard` | `TBD` | | This option has not yet been implemented. |
-	| `mc-math.constScoreboard` | `TBD` | | This option has not yet been implemented. |
+	| `mc-math.tempScoreboard` | `eqVarScoreboardName` | `"mcb.eq.var"` | The scoreboard to use when for temperary variables when using `eq` expressions. |
+	| `mc-math.constScoreboard` | `eqConstScoreboardName` | `"mcb.eq.const"` | The scoreboard to use when for constant values when using `eq` expressions. |
 	| `mc-extra.integrated` | `N/A` | | The `mc-extra.integrated` option has been removed, as the functionality of mc-extra has been integrated into the default language. |
 
 	```json title="Old Default config.json"
