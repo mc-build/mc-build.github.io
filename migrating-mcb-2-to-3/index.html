@@ -1142,11 +1142,17 @@
 <span class="w">        </span><span class="nx">internalScoreboard</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb.internal&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">rootNamespace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;mc-math&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">tempScoreboard</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.var&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">constScoreboard</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.const&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">New Default mcb.config.js</span><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">header</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;# Generated with MC-Build\n&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">internalScoreboardName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb.internal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">eqVarScoreboardName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.var&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">eqConstScoreboardName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.const&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">setup</span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">ioThreadCount</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
 <span class="p">}</span>
@@ -1190,15 +1196,15 @@
 </tr>
 <tr>
 <td><code>mc-math.tempScoreboard</code></td>
-<td><code>TBD</code></td>
-<td></td>
-<td>This option has not yet been implemented.</td>
+<td><code>eqVarScoreboardName</code></td>
+<td><code>"mcb.eq.var"</code></td>
+<td>The scoreboard to use when for temperary variables when using <code>eq</code> expressions.</td>
 </tr>
 <tr>
 <td><code>mc-math.constScoreboard</code></td>
-<td><code>TBD</code></td>
-<td></td>
-<td>This option has not yet been implemented.</td>
+<td><code>eqConstScoreboardName</code></td>
+<td><code>"mcb.eq.const"</code></td>
+<td>The scoreboard to use when for constant values when using <code>eq</code> expressions.</td>
 </tr>
 <tr>
 <td><code>mc-extra.integrated</code></td>
@@ -1214,12 +1220,18 @@
 <span class="w">        </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Generated with MC-Build\n&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;internalScoreboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb.internal&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;rootNamespace&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;mc-math&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;tempScoreboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.var&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;constScoreboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.const&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">New Default mcb.config.json</span><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Generated with MC-Build\n&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;internalScoreboardName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb.internal&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eqVarScoreboardName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.var&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eqConstScoreboardName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mcb.eq.const&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ioThreadCount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
