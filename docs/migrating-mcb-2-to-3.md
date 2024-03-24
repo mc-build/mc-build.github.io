@@ -45,6 +45,10 @@ Then, you will need to update the fields in your `config.js` or `config.json` fi
 			internalScoreboard: "mcb.internal",
 			rootNamespace: "mcb",
 		},
+		"mc-math": {
+			tempScoreboard: "mcb.eq.var",
+			constScoreboard: "mcb.eq.const"
+		}
 	}
 	```
 
@@ -52,6 +56,8 @@ Then, you will need to update the fields in your `config.js` or `config.json` fi
 	module.exports = {
 		header: "# Generated with MC-Build\n",
 		internalScoreboardName: "mcb.internal",
+		eqVarScoreboardName: "mcb.eq.var",
+		eqConstScoreboardName: "mcb.eq.const",
 		setup: null,
 		ioThreadCount: 1,
 	}
@@ -76,6 +82,10 @@ Then, you will need to update the fields in your `config.js` or `config.json` fi
 			"header": "# Generated with MC-Build\n",
 			"internalScoreboard": "mcb.internal",
 			"rootNamespace": "mcb"
+		},
+		"mc-math": {
+			"tempScoreboard": "mcb.eq.var",
+			"constScoreboard": "mcb.eq.const"
 		}
 	}
 	```
@@ -84,6 +94,8 @@ Then, you will need to update the fields in your `config.js` or `config.json` fi
 	{
 		"header": "# Generated with MC-Build\n",
 		"internalScoreboardName": "mcb.internal",
+		"eqVarScoreboardName": "mcb.eq.var",
+		"eqConstScoreboardName": "mcb.eq.const",
 		"ioThreadCount": 1
 	}
 	```
