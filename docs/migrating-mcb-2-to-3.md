@@ -29,8 +29,8 @@ Then, you will need to update the fields in your `config.js` or `config.json` fi
 	| `mc.rootNamespace` | `N/A` | | The `mc.rootNamespace` option has been removed. |
 	| `global.preBuild` | `setup` | `null` | The `global.preBuild` and `global.postBuild` options have been replaced with the `setup` option. |
 	| `global.postBuild` | `setup` | `null` | The `global.preBuild` and `global.postBuild` options have been replaced with the `setup` option. |
-	| `mc-math.tempScoreboard` | `TBD` | | This option has not yet been implemented. |
-	| `mc-math.constScoreboard` | `TBD` | | This option has not yet been implemented. |
+	| `mc-math.tempScoreboard` | `eqVarScoreboardName` | `"mcb.eq.var"` | The scoreboard to use when for temperary variables when using `eq` expressions. |
+	| `mc-math.constScoreboard` | `eqConstScoreboardName` | `"mcb.eq.const"` | The scoreboard to use when for constant values when using `eq` expressions. |
 	| `mc-extra.integrated` | `N/A` | | The `mc-extra.integrated` option has been removed, as the functionality of mc-extra has been integrated into the default language. |
 
 	```javascript title="Old Default config.js"
