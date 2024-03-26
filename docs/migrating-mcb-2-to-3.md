@@ -1,9 +1,15 @@
+# Migrating from MC-Build 2 to 3
+!!! warning
+	MC-Build 3 has a number of breaking changes from MC-Build 2. I suggest reading through the documentation to get a feel for the new features and changes before you start updating your code.
+
 ## Updating MC-Build 3
+
 
 If you already have MC-Build 2 installed, you can run this command to overwrite it, and install MC-Build 3 globally.
 ```
-npm i -g mc-build@3
+npm i -g mc-build@alpha
 ```
+
 
 ## CLI Differences
 
