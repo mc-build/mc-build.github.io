@@ -1063,6 +1063,11 @@
 </div>
 <h2 id="calling-a-template">Calling a Template</h2>
 <p>To call a template, you first need to import it. This is done using the <code>import</code> keyword followed by the path to the <code>.mcbt</code> file containing the template.</p>
+<div class="admonition note">
+<p class="admonition-title">Importing files vs libraries</p>
+<p>The path to the template file is relative to the file that is importing it.
+For more info see the <a href="../imports/">Imports</a> page.</p>
+</div>
 <div class="highlight"><pre><span></span><code>import &lt;template_path&gt;.mcbt
 </code></pre></div>
 <p>Once imported, you can call the template either via <code>template &lt;template_name&gt;</code> or <code>&lt;template_name&gt;</code> followed by the arguments.</p>
