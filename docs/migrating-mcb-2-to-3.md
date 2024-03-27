@@ -1,6 +1,6 @@
 # Migrating from MC-Build 2 to 3
 !!! warning
-	MC-Build 3 has a number of breaking changes from MC-Build 2. I suggest reading through the documentation to get a feel for the new features and changes before you start updating your code.
+	MC-Build 3 is in alpha, and is not backwards compatible with MC-Build 2. It is highly recommended that you read through this migration guide, and the rest of the documentation to better understand the changes before upgrading.
 
 ## Updating MC-Build 3
 
