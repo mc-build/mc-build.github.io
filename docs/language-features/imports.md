@@ -2,7 +2,7 @@ MC-Build supports importing of JavaScript, Templates, and libraries.
 
 ## Importing JavaScript Files
 ```
-import <path_to_file>.js
+import ./<path_to_file>.js
 ```
 
 When importing a JavaScript file, the context exported via `module.exports` will be injected into the JavaScript environment in the current file.
@@ -36,7 +36,7 @@ When importing a JavaScript file, the context exported via `module.exports` will
 
 ## Importing Template Files
 ```
-import <path_to_file>.mcbt
+import ./<path_to_file>.mcbt
 ```
 
 When importing a `.mcbt` file, all the templates from that file will be loaded into the current file and made usable.

@@ -116,12 +116,12 @@ To call a template, you first need to import it. This is done using the `import`
 
         And you wanted to import the `my_template.mcbt` file into `main.mcb`, you would do so like this:
         ```
-        import templates/my_template.mcbt
+        import ./templates/my_template.mcbt
         ```
 
     For more info on imports, see the [Imports](./imports.md).
 ```
-import <template_path>.mcbt
+import ./<template_path>.mcbt
 ```
 
 
