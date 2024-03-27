@@ -102,9 +102,24 @@ Arguments can be referenced inside of Script blocks by name.
 
 To call a template, you first need to import it. This is done using the `import` keyword followed by the path to the `.mcbt` file containing the template.
 
-!!! note "Importing files vs libraries"
+!!! note "Relative Imports"
     The path to the template file is relative to the file that is importing it.
-    For more info see the [Imports](./imports.md) page.
+    
+    ??? example "Example"
+        If your project was structured like this:
+        ```
+        /src
+            main.mcb
+            /templates
+                my_template.mcbt
+        ```
+
+        And you wanted to import the `my_template.mcbt` file into `main.mcb`, you would do so like this:
+        ```
+        import templates/my_template.mcbt
+        ```
+
+    For more info on imports, see the [Imports](./imports.md).
 ```
 import <template_path>.mcbt
 ```
