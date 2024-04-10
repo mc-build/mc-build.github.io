@@ -50,12 +50,13 @@ Each argument is defined as a name followed by a type. The type is optional, and
 Arguments can be referenced inside of Script blocks by name.
 
 #### Argument Types
-- `int` - This will match any integer.
+- `block` - This will match a [Block](./blocks.md) (Brackets only, no keyword, name, or function arguments).
 - `float` - This will match any number.
+- `int` - This will match any integer.
 - `js` - This expects an inline JavaScript block and will pass the computed value.
-- `word` - Matches anything up until the end of the input or the next space.
-- `raw` - Collects all remaining input as a string.
 - `literal` - Special, matches the argument name exactly, and is the default if no type is provided.
+- `raw` - Collects all remaining input as a string.
+- `word` - Matches anything up until the end of the input or the next space.
 
 ??? info "Examples"
     !!! example "Simple Template"
