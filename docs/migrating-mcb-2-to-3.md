@@ -262,6 +262,26 @@ See [Function Definitions](language-features/function-definitions.md) for more i
 	}
 	```
 
+### `clock` functions
+
+Clock functions now have a required name argument.
+
+See [Clocks](language-features/clocks.md) for more information.
+
+??? info "Updating `clock` functions"
+
+	```mcfunction title="Old"
+	clock 1s {
+		<...>
+	}
+	```
+
+	```mcfunction title="Updated"
+	clock my_clock 1s {
+		<...>
+	}
+	```
+
 ### Macros
 
 Macros have been replaced with the new Template system.
