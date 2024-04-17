@@ -11,11 +11,8 @@ execute ... run {
         ```
         execute if score @s appleCount matches 1 run {
             say I have 1 apple!
-            playsound minecraft:entity.player.levelup @s ~ ~ ~ 1 1
         }
         ```
-
-        This will say "I have 1 apple!" and play a sound if the executing entity has a score of 1 in the `appleCount` objective.
 
 ## Execute If / Else
 Any `execute run` block can be turned into an `execute if / else` block by appending an `else execute ... run` or `else run` block to it
@@ -35,14 +32,45 @@ execute ... run {
         ```
         execute if score @s appleCount matches ..0 run {
             say I have no apples!
-            playsound minecraft:entity.player.hurt @s ~ ~ ~ 1 1
         } else execute if score @s appleCount matches 1 run {
             say I have 1 apple!
-            playsound minecraft:entity.player.levelup @s ~ ~ ~ 1 1
         } else run {
             say I have more than 1 apple!
-            playsound minecraft:ui.toast.challenge_complete @s ~ ~ ~ 1 1
         }
         ```
 
-        This will 1: say "I have no apples!" and play a sound if the executing entity has a score of 0 in the `appleCount` objective. 2: say "I have 1 apple!" and play a sound if the executing entity has a score of 1 in the `appleCount` objective. Or 3: say "I have more than 1 apple!" and play a sound if the executing entity has a score of more than 1 in the `appleCount` objective.
+## Execute If / Unless Function
+
+You can embed a [Block](blocks.md) in the `if/unless function` execute sub-command.
+
+```
+execute <if|unless> function {
+	<...>
+} run <...>
+```
+
+??? info "Examples"
+    !!! example "If Function"
+        An `OR` condition using `if function`
+
+        ```{title="example.mcb"}
+        function a {
+            execute if function {
+                execute if score @s test matches 1 run return 1
+                execute if score @s test matches 5 run return 1
+                execute if score @s test matches 10 run return 1
+                return 0
+            } run say "Hello World!"
+        }
+        ```
+
+        ```{title="example:a.mcfunction"}
+        execute if function example:zzz/b run say "Hello World!"
+        ```
+
+        ```{title="example:zzz/b.mcfunction"}
+        execute if score @s test matches 1 run return 1
+        execute if score @s test matches 5 run return 1
+        execute if score @s test matches 10 run return 1
+        return 0
+        ```

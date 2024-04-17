@@ -32,6 +32,7 @@ nav:
       - Directories: language-features/directories.md
       - Execute run: language-features/execute-run.md
       - Execute if / else: language-features/execute-run#execute-if-else
+      - Execute if / unless function: language-features/execute-run#execute-if-unless-function
       - Function Calls: language-features/function-calls.md
       - Function Definitions: language-features/function-definitions.md
       - Imports: language-features/imports.md
@@ -40,6 +41,7 @@ nav:
       - Tags: language-features/tags.md
       - Templates: language-features/templates.md
       - Tick and Load Blocks: language-features/tick-and-load-blocks.md
+      - Schedule Blocks: language-features/schedule-blocks.md
 
 extra_css:
   - stylesheets/extra.css
