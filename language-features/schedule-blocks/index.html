@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../function-definitions/">
+        <link rel="prev" href="../tick-and-load-blocks/">
       
-      
-        <link rel="next" href="../javascript-blocks-and-contexts/">
       
       
       <link rel="icon" href="../../img/favicon.ico">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Imports - MC-Build Documentation</title>
+        <title>Schedule Blocks - MC-Build Documentation</title>
       
     
     
@@ -82,11 +80,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#importing-javascript-files" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -116,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Imports
+              Schedule Blocks
             
           </span>
         </div>
@@ -657,28 +650,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Imports
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../imports/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,51 +662,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#importing-javascript-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Importing JavaScript Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importing-template-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Importing Template Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importing-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Importing Libraries
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -846,10 +776,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../schedule-blocks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -858,6 +795,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -888,41 +826,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#importing-javascript-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Importing JavaScript Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importing-template-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Importing Template Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importing-libraries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Importing Libraries
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -936,79 +839,26 @@
                   
 
 
-  <h1>Imports</h1>
+  <h1>Schedule Blocks</h1>
 
-<p>MC-Build supports importing of JavaScript, Templates, and libraries.</p>
-<h2 id="importing-javascript-files">Importing JavaScript Files</h2>
-<div class="highlight"><pre><span></span><code>import ./&lt;path_to_file&gt;.js
+<p>Schedule blocks allow you to quickly create and call a new function within a schedule command.</p>
+<div class="highlight"><pre><span></span><code>schedule function {
+    &lt;...&gt;
+} 1t [replace|append]
 </code></pre></div>
-<p>When importing a JavaScript file, the context exported via <code>module.exports</code> will be injected into the JavaScript environment in the current file.</p>
 <details class="info">
 <summary>Examples</summary>
 <div class="admonition example">
-<p class="admonition-title">Importing a JavaScript File</p>
-<div class="highlight"><span class="filename">my_js_file.js</span><pre><span></span><code>module.exports = {
-    helloWorldString: &quot;Hello, world!&quot;
-    myIterator: function* () {
-        yield 1;
-        yield 2;
-        yield 3;
-    }
+<p class="admonition-title">Schedule Function</p>
+<div class="highlight"><span class="filename">example.mcb</span><pre><span></span><code>function a {
+    schedule function {
+        say Hello World!
+    } 1t
 }
 </code></pre></div>
-<div class="highlight"><span class="filename">example.mcb</span><pre><span></span><code>import ./my_js_file.js
-
-function example {
-    say &lt;% helloWorldString %&gt;
-}
-
-REPEAT myIterator as i {
-    function &lt;% i %&gt; {
-        say I&#39;m function &lt;% i %&gt;!
-    }
-}
+<div class="highlight"><span class="filename">example:a.mcfunction</span><pre><span></span><code>schedule function example:a 1t
 </code></pre></div>
-</div>
-</details>
-<h2 id="importing-template-files">Importing Template Files</h2>
-<div class="highlight"><pre><span></span><code>import ./&lt;path_to_file&gt;.mcbt
-</code></pre></div>
-<p>When importing a <code>.mcbt</code> file, all the templates from that file will be loaded into the current file and made usable.</p>
-<details class="info">
-<summary>Examples</summary>
-<div class="admonition example">
-<p class="admonition-title">Importing a Template File</p>
-<div class="highlight"><span class="filename">my_template.mcbt</span><pre><span></span><code>template hello {
-    with arg1:word {
-        say Hello, &lt;% arg1 %&gt;!
-    }
-}
-</code></pre></div>
-<div class="highlight"><span class="filename">example.mcb</span><pre><span></span><code>import ./my_template.mcbt
-
-function hello {
-    hello world
-}
-</code></pre></div>
-</div>
-</details>
-<h2 id="importing-libraries">Importing Libraries</h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Libraries are Work-in-Progress. This section is subject to change.</p>
-</div>
-<div class="highlight"><pre><span></span><code>import &lt;library_name&gt;
-</code></pre></div>
-<p>When importing a library by name, the code included in the library will be loaded and any templates from it will be added to the current file.</p>
-<details class="info">
-<summary>Examples</summary>
-<div class="admonition example">
-<p class="admonition-title">Importing a Library</p>
-<div class="highlight"><span class="filename">example.mcb</span><pre><span></span><code>import hello_world_lib
-
-function hello {
-    hello world
-}
+<div class="highlight"><span class="filename">example:zzz/b.mcfunction</span><pre><span></span><code>say Hello World!
 </code></pre></div>
 </div>
 </details>

@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -597,6 +597,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../execute-run#execute-if-unless-function" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Execute if / unless function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../function-calls/" class="md-nav__link">
         
   
@@ -860,6 +881,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1017,12 +1059,13 @@
 <p>Arguments can be referenced inside of Script blocks by name.</p>
 <h4 id="argument-types">Argument Types</h4>
 <ul>
-<li><code>int</code> - This will match any integer.</li>
+<li><code>block</code> - This will match a <a href="../blocks/">Block</a> (Brackets only, no keyword, name, or function arguments).</li>
 <li><code>float</code> - This will match any number.</li>
+<li><code>int</code> - This will match any integer.</li>
 <li><code>js</code> - This expects an inline JavaScript block and will pass the computed value.</li>
-<li><code>word</code> - Matches anything up until the end of the input or the next space.</li>
-<li><code>raw</code> - Collects all remaining input as a string.</li>
 <li><code>literal</code> - Special, matches the argument name exactly, and is the default if no type is provided.</li>
+<li><code>raw</code> - Collects all remaining input as a string.</li>
+<li><code>word</code> - Matches anything up until the end of the input or the next space.</li>
 </ul>
 <details class="info">
 <summary>Examples</summary>
@@ -1064,11 +1107,23 @@
 <h2 id="calling-a-template">Calling a Template</h2>
 <p>To call a template, you first need to import it. This is done using the <code>import</code> keyword followed by the path to the <code>.mcbt</code> file containing the template.</p>
 <div class="admonition note">
-<p class="admonition-title">Importing files vs libraries</p>
-<p>The path to the template file is relative to the file that is importing it.
-For more info see the <a href="../imports/">Imports</a> page.</p>
+<p class="admonition-title">Relative Imports</p>
+<p>The path to the template file is relative to the file that is importing it.</p>
+<details class="example">
+<summary>Example</summary>
+<p>If your project was structured like this:
+<div class="highlight"><pre><span></span><code>/src
+    main.mcb
+    /templates
+        my_template.mcbt
+</code></pre></div></p>
+<p>And you wanted to import the <code>my_template.mcbt</code> file into <code>main.mcb</code>, you would do so like this:
+<div class="highlight"><pre><span></span><code>import ./templates/my_template.mcbt
+</code></pre></div></p>
+</details>
+<p>For more info on imports, see the <a href="../imports/">Imports</a>.</p>
 </div>
-<div class="highlight"><pre><span></span><code>import &lt;template_path&gt;.mcbt
+<div class="highlight"><pre><span></span><code>import ./&lt;template_path&gt;.mcbt
 </code></pre></div>
 <p>Once imported, you can call the template either via <code>template &lt;template_name&gt;</code> or <code>&lt;template_name&gt;</code> followed by the arguments.</p>
 <div class="highlight"><pre><span></span><code>[template] &lt;template_name&gt; [args]

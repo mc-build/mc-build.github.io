@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -605,6 +605,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#execute-if-unless-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute If / Unless Function
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -626,6 +635,27 @@
   
   <span class="md-ellipsis">
     Execute if / else
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../execute-run#execute-if-unless-function" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Execute if / unless function
   </span>
   
 
@@ -803,6 +833,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -843,6 +894,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#execute-if-unless-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute If / Unless Function
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -871,10 +931,8 @@
 <p class="admonition-title">Conditional Execution</p>
 <div class="highlight"><pre><span></span><code>execute if score @s appleCount matches 1 run {
     say I have 1 apple!
-    playsound minecraft:entity.player.levelup @s ~ ~ ~ 1 1
 }
 </code></pre></div>
-<p>This will say "I have 1 apple!" and play a sound if the executing entity has a score of 1 in the <code>appleCount</code> objective.</p>
 </div>
 </details>
 <h2 id="execute-if-else">Execute If / Else</h2>
@@ -893,16 +951,41 @@
 <p class="admonition-title">Multi-Conditional Execution</p>
 <div class="highlight"><pre><span></span><code>execute if score @s appleCount matches ..0 run {
     say I have no apples!
-    playsound minecraft:entity.player.hurt @s ~ ~ ~ 1 1
 } else execute if score @s appleCount matches 1 run {
     say I have 1 apple!
-    playsound minecraft:entity.player.levelup @s ~ ~ ~ 1 1
 } else run {
     say I have more than 1 apple!
-    playsound minecraft:ui.toast.challenge_complete @s ~ ~ ~ 1 1
 }
 </code></pre></div>
-<p>This will 1: say "I have no apples!" and play a sound if the executing entity has a score of 0 in the <code>appleCount</code> objective. 2: say "I have 1 apple!" and play a sound if the executing entity has a score of 1 in the <code>appleCount</code> objective. Or 3: say "I have more than 1 apple!" and play a sound if the executing entity has a score of more than 1 in the <code>appleCount</code> objective.</p>
+</div>
+</details>
+<h2 id="execute-if-unless-function">Execute If / Unless Function</h2>
+<p>You can embed a <a href="../blocks/">Block</a> in the <code>if/unless function</code> execute sub-command.</p>
+<div class="highlight"><pre><span></span><code>execute &lt;if|unless&gt; function {
+    &lt;...&gt;
+} run &lt;...&gt;
+</code></pre></div>
+<details class="info">
+<summary>Examples</summary>
+<div class="admonition example">
+<p class="admonition-title">If Function</p>
+<p>An <code>OR</code> condition using <code>if function</code></p>
+<div class="highlight"><span class="filename">example.mcb</span><pre><span></span><code>function a {
+    execute if function {
+        execute if score @s test matches 1 run return 1
+        execute if score @s test matches 5 run return 1
+        execute if score @s test matches 10 run return 1
+        return 0
+    } run say &quot;Hello World!&quot;
+}
+</code></pre></div>
+<div class="highlight"><span class="filename">example:a.mcfunction</span><pre><span></span><code>execute if function example:zzz/b run say &quot;Hello World!&quot;
+</code></pre></div>
+<div class="highlight"><span class="filename">example:zzz/b.mcfunction</span><pre><span></span><code>execute if score @s test matches 1 run return 1
+execute if score @s test matches 5 run return 1
+execute if score @s test matches 10 run return 1
+return 0
+</code></pre></div>
 </div>
 </details>
 

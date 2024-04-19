@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -491,6 +491,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#clock-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      clock functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macros" class="md-nav__link">
     <span class="md-ellipsis">
       Macros
@@ -742,6 +751,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../language-features/execute-run#execute-if-unless-function" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Execute if / unless function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../language-features/function-calls/" class="md-nav__link">
         
   
@@ -903,6 +933,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../language-features/schedule-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedule Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1019,6 +1070,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#clock-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      clock functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macros" class="md-nav__link">
     <span class="md-ellipsis">
       Macros
@@ -1059,7 +1119,7 @@
 <h1 id="migrating-from-mc-build-2-to-3">Migrating from MC-Build 2 to 3</h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>MC-Build 3 has a number of breaking changes from MC-Build 2. I suggest reading through the documentation to get a feel for the new features and changes before you start updating your code.</p>
+<p>MC-Build 3 is in alpha, and is not backwards compatible with MC-Build 2. It is highly recommended that you read through this migration guide, and the rest of the documentation to better understand the changes before upgrading.</p>
 </div>
 <h2 id="updating-mc-build-3">Updating MC-Build 3</h2>
 <p>If you already have MC-Build 2 installed, you can run this command to overwrite it, and install MC-Build 3 globally.
@@ -1358,6 +1418,20 @@
 <span class="w">    </span><span class="err">&lt;...&gt;</span>
 <span class="p">}</span>
 <span class="nb">function</span><span class="w"> </span><span class="kc">my_loading_function</span><span class="w"> </span><span class="kc">load</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">&lt;...&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h3 id="clock-functions"><code>clock</code> functions</h3>
+<p>Clock functions now have a required name argument.</p>
+<p>See <a href="../language-features/clocks/">Clocks</a> for more information.</p>
+<details class="info">
+<summary>Updating <code>clock</code> functions</summary>
+<div class="highlight"><span class="filename">Old</span><pre><span></span><code><span class="nb">clock</span><span class="w"> </span><span class="err">1</span><span class="vc">s</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">&lt;...&gt;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Updated</span><pre><span></span><code><span class="nb">clock</span><span class="w"> </span><span class="kc">my_clock</span><span class="w"> </span><span class="err">1</span><span class="vc">s</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="err">&lt;...&gt;</span>
 <span class="p">}</span>
 </code></pre></div>
