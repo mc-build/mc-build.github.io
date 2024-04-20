@@ -842,18 +842,18 @@
   <h1>Schedule Blocks</h1>
 
 <p>Schedule blocks allow you to quickly create and call a new function within a schedule command.</p>
-<div class="highlight"><pre><span></span><code>schedule function {
+<div class="highlight"><pre><span></span><code>schedule &lt;delay&gt; [replace|append] {
     &lt;...&gt;
-} 1t [replace|append]
+}
 </code></pre></div>
 <details class="info">
 <summary>Examples</summary>
 <div class="admonition example">
 <p class="admonition-title">Schedule Function</p>
 <div class="highlight"><span class="filename">example.mcb</span><pre><span></span><code>function a {
-    schedule function {
+    schedule 1t {
         say Hello World!
-    } 1t
+    }
 }
 </code></pre></div>
 <div class="highlight"><span class="filename">example:a.mcfunction</span><pre><span></span><code>schedule function example:a 1t
