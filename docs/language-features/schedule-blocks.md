@@ -1,9 +1,9 @@
 Schedule blocks allow you to quickly create and call a new function within a schedule command.
 
 ```
-schedule function {
+schedule <delay> [replace|append] {
 	<...>
-} 1t [replace|append]
+}
 ```
 
 ??? info "Examples"
@@ -11,9 +11,9 @@ schedule function {
 
 		```{title="example.mcb"}
 		function a {
-			schedule function {
+			schedule 1t {
 				say Hello World!
-			} 1t
+			}
 		}
 		```
 
