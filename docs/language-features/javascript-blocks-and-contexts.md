@@ -84,7 +84,7 @@ Variables, and functions that are available for use in multi-line script blocks.
 
 - `embed(block: BoundBlock)`
 
-	Takes a `BoundBlock` instance and embeds a reference to it.
+	Takes a `BoundBlock` instance and returns a function command that references it, which can then be `emit`ed.
 
 - `require(path: String)`
 

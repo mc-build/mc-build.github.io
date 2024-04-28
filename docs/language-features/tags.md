@@ -28,7 +28,7 @@ tag <tag_type> <tag_name> [replace] {
 		```mcb
 		tag blocks air {
 			minecraft:air
-			minceraft:cave_air
+			minecraft:cave_air
 			minecraft:void_air
 		}
 		```
