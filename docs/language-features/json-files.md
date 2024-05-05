@@ -15,6 +15,10 @@ MC-Build includes placeholder syntaxe for raw JSON Files.
 ```
 advancement <name> <json>
 ```
+### [Enchantments](https://minecraft.fandom.com/wiki/Enchantment/JSON_format)
+```
+enchantment <name> <json>
+```
 ### [Item Modifiers](https://minecraft.fandom.com/wiki/Item_modifier)
 ```
 item_modifier <name> <json>
