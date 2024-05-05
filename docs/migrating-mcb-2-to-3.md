@@ -238,7 +238,7 @@ The following example shows how to update `execute if / else` to the new syntax.
 
 Tick and Load functions have been updated to be more flexible.
 
-Instead of naming your functions `tick` and `load`, you can now name them whatever you want, and use the new `tick` and `load` keywords after the function name to specify whether the function should be run on the tick or load events.
+Instead of naming your functions `tick` and `load`, you can now name them whatever you want, and use the new function tag argument after the function name to specify what tags the function should be included in.
 
 See [Function Definitions](language-features/function-definitions.md) for more information.
 
@@ -254,10 +254,10 @@ See [Function Definitions](language-features/function-definitions.md) for more i
 	```
 
 	```mcfunction title="Updated"
-	function my_ticking_function tick {
+	function my_ticking_function minecraft:tick {
 		<...>
 	}
-	function my_loading_function load {
+	function my_loading_function minecraft:load {
 		<...>
 	}
 	```

@@ -3,7 +3,7 @@ Function definitions are used to create new functions. They can be used inside o
 Applying the `tick` or `load` keyword to a function definition will add it to the `minecraft:tick` function tag or the `minecraft:load` function tag, respectively.
 
 ```
-function <name> [tick|load] {
+function <name> [function-tag] {
     <...>
 }
 ```
@@ -16,17 +16,30 @@ function <name> [tick|load] {
         }
         ```
 
-    !!! example "Creating a Ticking Function"
+    !!! example "Adding a function to the `minecraft:tick` tag"
         ```
-        function hello tick {
+        function hello minecraft:tick {
             say I spam chat every tick!
         }
         ```
 
-    !!! example "Creating a Loading Function"
+    !!! example "Adding a function to the `minecraft:load` tag"
         ```
-        function hello load {
+        function hello minecraft:load {
             say I'm polite, and only say hello once when the Data Pack loads!
+        }
+        ```
+
+    !!! example "Adding a function to a custom tag"
+        ```
+        function hello my_namespace:my_tag {
+            say Hello!
+        }
+        ```
+        If no namespace is specified the local namespace is used.
+        ```
+        function hello my_tag {
+            say Hello!
         }
         ```
 
