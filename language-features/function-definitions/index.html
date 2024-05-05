@@ -844,11 +844,11 @@
   <h1>Function Definitions</h1>
 
 <p>Function definitions are used to create new functions. They can be used inside of <a href="../directories/">Directories</a>, or in the root of the <code>.mcb</code> file.</p>
-<p>Applying the <code>tick</code> or <code>load</code> keyword to a function definition will add it to the <code>minecraft:tick</code> function tag or the <code>minecraft:load</code> function tag, respectively.</p>
 <div class="highlight"><pre><span></span><code>function &lt;name&gt; [function-tag] {
     &lt;...&gt;
 }
 </code></pre></div>
+<p><code>function-tag</code> is optional and can be used to add the function to a tag. If no namespace is specified the local namespace is used.</p>
 <details class="info">
 <summary>Examples</summary>
 <div class="admonition example">
