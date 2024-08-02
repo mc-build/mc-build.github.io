@@ -27,17 +27,17 @@ REPEAT (min:int, max:int) [as <variable name>] {
 		say Hello, world!
 		```
 
-	!!! example "With `as`"
-		```{title="Code"}
-		REPEAT (1, 3) as i {
-			say Loop <%i%>
-		}
-		```
-		```{title="Output"}
-		say Loop 1
-		say Loop 2
-		say Loop 3
-		```
+    !!! example "With `as`"
+    	```{title="Code"}
+    	REPEAT (1, 3) as i {
+    		say Loop <%i%>
+    	}
+    	```
+    	```{title="Output"}
+    	say Loop 1
+    	say Loop 2
+    	say Loop 3
+    	```
 
 ## Float Range
 
@@ -65,20 +65,21 @@ REPEAT (min:float, max:float, increment:float) [as <variable name>] {
 		say Hello, world!
 		```
 
-	!!! example "With `as`"
-		```{title="Code"}
-		REPEAT (0, 1.5, 0.5) as i {
-			say Loop <%i%>
-		}
-		```
-		```{title="Output"}
-		say Loop 0
-		say Loop 0.5
-		say Loop 1.0
-		say Loop 1.5
-		```
+    !!! example "With `as`"
+    	```{title="Code"}
+    	REPEAT (0, 1.5, 0.5) as i {
+    		say Loop <%i%>
+    	}
+    	```
+    	```{title="Output"}
+    	say Loop 0
+    	say Loop 0.5
+    	say Loop 1.0
+    	say Loop 1.5
+    	```
 
 ## JS Array
+
 Repeats the code for each value in the provided `array`.
 
 If `as` is provided, the variable will be assigned to the current value of the loop.
@@ -103,20 +104,21 @@ REPEAT (array:Array) [as <variable name>] {
 		say Hello, world!
 		```
 
-	!!! example "With `as`"
-		```{title="Code"}
-		REPEAT ([1,2,7,9]) as i {
-			say Looped <%i%>
-		}
-		```
-		```{title="Output"}
-		say Looped 1
-		say Looped 2
-		say Looped 7
-		say Looped 9
-		```
+    !!! example "With `as`"
+    	```{title="Code"}
+    	REPEAT ([1,2,7,9]) as i {
+    		say Looped <%i%>
+    	}
+    	```
+    	```{title="Output"}
+    	say Looped 1
+    	say Looped 2
+    	say Looped 7
+    	say Looped 9
+    	```
 
 ## JS Iterator
+
 Repeats the code for each value in the provided `iterator`.
 
 If `as` is provided, the variable will be assigned to the current value of the loop.
@@ -141,16 +143,40 @@ REPEAT (iterator:() => Iterator) [as <variable name>] {
 		say Hello, world!
 		```
 
-	!!! example "With `as`"
-		```{title="Code"}
-		REPEAT (function*() { yield 1; yield 2; yield 7; yield 9; }) as i {
-			say Looped <%i%>
-		}
-		```
-		```{title="Output"}
-		say Looped 1
-		say Looped 2
-		say Looped 7
-		say Looped 9
-		```
+    !!! example "With `as`"
+    	```{title="Code"}
+    	REPEAT (function*() { yield 1; yield 2; yield 7; yield 9; }) as i {
+    		say Looped <%i%>
+    	}
+    	```
+    	```{title="Output"}
+    	say Looped 1
+    	say Looped 2
+    	say Looped 7
+    	say Looped 9
+    	```
 
+## Object Desctructuring
+
+Repeats the code for each key, value pair in the provided object.
+
+```
+REPEAT (<object>) [as <variable name>, <variable name>] {
+	<...>
+}
+```
+
+??? info "Examples"
+
+    ```{title="Code"}
+	REPEAT ({a: 1, b: 2, c: 7, d: 9}) as key, value {
+		say <%key%> = <%value%>
+	}
+    ```
+
+    ```{title="Output"}
+	say a = 1
+	say b = 2
+	say c = 7
+	say d = 9
+    ```
