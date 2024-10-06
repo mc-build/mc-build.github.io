@@ -10,7 +10,7 @@ If you don't already have Node.js, visit their site ([nodejs.org](https://nodejs
 Once you've installed Node.js, open a command prompt and run the following command:
 
 ```bash
-npm i -g mc-build@alpha
+npm i -g mc-build@latest
 ```
 
 That's it! MC-Build is now installed.
