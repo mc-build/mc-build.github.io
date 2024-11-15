@@ -113,7 +113,7 @@ Variables, and functions that are available for use in multi-line script blocks.
 		say 1
 		say 2
 		```
-
+<!-- 
 	!!! example "Generating Functions with Multi-line Scripts"
 
 		```{title="Code"}
@@ -136,7 +136,7 @@ Variables, and functions that are available for use in multi-line script blocks.
 
 		```{title="say_2.mcfunction"}
 		say 2
-		```
+		``` -->
 
 ## Global Scope
 
