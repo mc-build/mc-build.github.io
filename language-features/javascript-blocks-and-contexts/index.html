@@ -1123,9 +1123,11 @@ say 1
 say 2
 </code></pre></div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Generating Functions with Multi-line Scripts</p>
-<div class="highlight"><span class="filename">Code</span><pre><span></span><code>&lt;%%
+</details>
+<!-- 
+    !!! example "Generating Functions with Multi-line Scripts"
+
+        <div class="highlight"><span class="filename">Code</span><pre><span></span><code>&lt;%%
     for (let i = 0; i &lt; 3; i++) {
         emit.mcb(`function say_${i} {
             say ${i}
@@ -1133,14 +1135,17 @@ say 2
     }
 %%&gt;
 </code></pre></div>
-<div class="highlight"><span class="filename">say_0.mcfunction</span><pre><span></span><code>say 0
+
+        <div class="highlight"><span class="filename">say_0.mcfunction</span><pre><span></span><code>say 0
 </code></pre></div>
-<div class="highlight"><span class="filename">say_1.mcfunction</span><pre><span></span><code>say 1
+
+        <div class="highlight"><span class="filename">say_1.mcfunction</span><pre><span></span><code>say 1
 </code></pre></div>
-<div class="highlight"><span class="filename">say_2.mcfunction</span><pre><span></span><code>say 2
-</code></pre></div>
-</div>
-</details>
+
+        ```{title="say_2.mcfunction"}
+        say 2
+        ``` -->
+
 <h2 id="global-scope">Global Scope</h2>
 <p>Variables, and functions that are available for use in all script blocks.</p>
 <ul>
