@@ -58,25 +58,3 @@ When importing a `.mcbt` file, all the templates from that file will be loaded i
 			hello world
 		}
 		```
-
-
-## Importing Libraries
-
-!!! warning
-	Libraries are Work-in-Progress. This section is subject to change.
-
-```
-import <library_name>
-```
-
-When importing a library by name, the code included in the library will be loaded and any templates from it will be added to the current file.
-
-??? info "Examples"
-	!!! example "Importing a Library"
-		```{title="example.mcb"}
-		import hello_world_lib
-
-		function hello {
-			hello world
-		}
-		```
